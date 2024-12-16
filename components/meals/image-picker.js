@@ -1,8 +1,9 @@
 'use client'
 
 import { useRef, useState } from "react"
-import classes from "./image-picker.module.css"
 import Image from "next/image"
+
+import classes from "./image-picker.module.css"
 
 export default function ImagePicker({ label, name }) {
     const [pickedImage, setPickedImage] = useState()
@@ -35,7 +36,7 @@ export default function ImagePicker({ label, name }) {
                 {!pickedImage && <p>No image picked yet!</p>}
                 {pickedImage && <Image src={pickedImage} alt="The image selected by the user." fill />}
             </div>
-            <input type="file" ref={imageInput} id={name} name={name} accept="image/png, image.jpg, image.jpeg" onChange={handleImageChange} className={classes.input} required/>
+            <input type="file" ref={imageInput} id={name} name={name} accept="image/png, image.jpg, image.jpeg" onChange={handleImageChange} className={classes.input} required />
             <button className={classes.button} onClick={handlePickClick} type="button">Pick an Image</button>
         </div>
     </div>
